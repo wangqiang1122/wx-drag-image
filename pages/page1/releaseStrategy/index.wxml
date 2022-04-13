@@ -1,0 +1,44 @@
+<!--pages/play/releaseStrategy/index.wxml-->
+<view class='releaseStrategy' style="position: {{textfixed}};top: {{textTop}}">
+  <view class='a1'>
+    <view class='submit ke' bindtap="submit">发布</view>
+  </view>
+   <input class="releaseStrategyInput"  placeholder-class='placeholderClass' placeholder="添加标题（选填）"/>
+   <view class='line'></view>
+   <textarea  
+   class='textarea1' 
+   bindinput="input"
+   placeholder="分享新鲜事..." 
+   placeholder-class='placeholderClass1' ></textarea> 
+   <view class='zhi'>至少10个字</view>
+   <dragImage 
+   bindimagetap='imagetap'
+   bindImageListinfo='ImageListinfo'
+   count="{{count}}"
+   dataUrls="{{imagelist}}"
+   isImageInit="{{isImageInit}}"
+   pageScroll="{{pageScroll}}"
+   binddragStart="dragStart"
+   binddragEnd="dragEnd"
+   ></dragImage>
+   <!-- <view class='wei'>
+     <image src="http://crm-dev-itrigger.oss-cn-beijing.aliyuncs.com/article_images/451b2994-c42b-478d-81ed-173d9c2c82e0.png"></image>
+     <text>添加位置</text>
+   </view> -->
+   <view class='footerbiao'>
+    <labelpo/>
+    <view class='left'></view>
+    <labelpo/>
+   </view>
+   <!--预览-->
+   <previewImage
+   bindbackImage="backImage"
+   binddelteleImage="delteleImage"
+   imgUrls="{{imagelist}}"
+   isShow="{{isShow}}"
+   current="{{currentImageIndex}}"
+   isCurrent="{{isCurrent}}"
+   winWid="{{winWid}}"
+   len="{{len}}"
+   />
+</view> 

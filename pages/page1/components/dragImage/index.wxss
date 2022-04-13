@@ -1,0 +1,92 @@
+/* mp/pages/dragImage/index.wxss */
+.dragImage{
+  position: relative;
+  margin-top: 46rpx;
+}
+.imgitem, .imgitem1{
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 16rpx;
+  overflow: hidden;
+}
+.imgitem{
+  margin-top: 15rpx;
+  position: relative;
+  margin-left: 15rpx;
+}
+.imgitem:nth-child(1),.imgitem:nth-child(2),.imgitem:nth-child(3),.imgitem:nth-child(4) {
+  margin-top: 0;
+}
+.imgitem:nth-child(1),.imgitem:nth-child(5),.imgitem:nth-child(9),.imgitem:nth-child(13)    {
+  margin-left: 0;
+}
+.imgitem image, .imgitem1 image{
+  width:  160rpx;
+  height: 160rpx;
+}
+.imgitem .jia {
+  width: 62rpx;
+  height: 62rpx;
+  margin: 50rpx;
+}
+.imgitemBorder{
+  border: 1px solid #DDD;
+}
+.v1{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+.movable-area {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+}
+.ready-place {
+  background-color: #fff
+}
+.head1{
+  width: 60rpx;
+  height: 32rpx;
+  background: #000000;
+  opacity: 0.8;
+  border-radius: 16rpx;
+  font-size: 20rpx;
+  position: absolute;
+  color:#fff;
+  bottom: 10rpx;
+  right: 10rpx;
+  text-align: center;
+  line-height: 32rpx;
+}
+.g1 image{
+  width: 29rpx;
+  height: 29rpx;
+  margin-top: 13rpx;
+  margin-left: 10rpx;
+}
+.g1 text{
+  color: #2F2F2F;
+  font-size: 30rpx;
+}
+.g1{
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  margin-top: 20rpx;
+}
+.zhan1{
+  margin: 0 auto;
+  display: flex;
+  line-height: 60rpx;
+}
+.v1hidden{
+  height: 160rpx;
+  overflow: hidden;
+}
+.g1 .jiao1{
+  transform: rotate(180deg);
+  margin-top: 15rpx;
+}

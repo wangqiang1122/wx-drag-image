@@ -1,0 +1,89 @@
+<!--components/guide/index.wxml-->
+<scroll-view class="guide_list" scroll-y="{{true}}" bindscrolltolower="searchScrollY">
+	<view class='noData flex-col' wx:if='{{planlist.length<=0 && noListShow}}'>
+		<image src='https://crm-dev-itrigger.oss-cn-beijing.aliyuncs.com/sunac/nodata/icon_nofali.png' mode='widthFix'></image>
+		<text>暂无数据</text>
+	</view>
+	<view class="flex-row border-box g-container" wx:else>
+		<view class='left'>
+			<view class="guide_item" wx:for="{{planlist}}" wx:if="{{index%2==0}}" wx:key="id" bindtouchstart="bindTouchStart" bindtouchend="bindTouchEnd" bindlongtap="bingLongTap" bindtap="toDetail" data-item="{{item}}" data-index="{{index}}">
+		
+				<view class="guide_l_image_view" bindlongpress="longcli" data-item="{{item}}">
+					<image class='jing1' src="http://crm-dev-itrigger.oss-cn-beijing.aliyuncs.com/article_images/5e5ee6bd-1ad8-407c-88e0-569ad9005123.png" alt=""></image>
+					<view class='guo'>审核通过</view>
+					<image class="guide_l_image" src="{{item.img}}" mode="widthFix"></image>
+					<view class="guide_l_image_icon" wx:if="{{item.status == 2 && item.isTrace}}">
+						<view class="guide_l_image_icon_bg"></view>
+						<image src="https://crm-dev-itrigger.oss-cn-beijing.aliyuncs.com/sunac/images/icon-trace-status.png" mode="widthFix"></image>
+					</view>
+				</view>
+				<view class='guide_wrap'>
+					<!-- <view class="guide_i_t flex-row jus-start">
+						<image src="../../images/position.png" class="guide-i-i"></image>
+						{{item.position}}
+					</view> -->
+					<view class="guide-des">
+						{{item.des}}
+					</view>
+					<view class="guide_i_p flex-row">
+						<view class="photoNick" wx:if="{{item.isOfficial == 1}}">
+							<view class="photo photo-gf"></view>
+							<view class="nick">官方推荐</view>
+						</view>
+						<view class="photoNick" wx:if="{{item.isOfficial == 0}}">
+							<view class="photo">
+								<image src="{{item.headPhotoUrl}}"></image>
+							</view>
+							<view class="nick">{{item.nickName}}</view>
+						</view>
+						<view class="collection" catchtap="toCollection" data-item="{{item}}" data-index="{{index}}">
+							<image src="{{item.isCollect=='1'?'http://crm-dev-itrigger.oss-cn-beijing.aliyuncs.com/sunac/V2/play/hart_active2x.png':'http://crm-dev-itrigger.oss-cn-beijing.aliyuncs.com/sunac/V2/play/hart2x.png'}}"></image>
+							<text style="color: {{item.isCollect == 1 ? '#FFBC00' : '#8d8b89'}}">{{item.collectCount>99999?'10w+':(item.collectCount?item.collectCount:'0')}}</text>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class='right'>
+			<view class="guide_item" wx:for="{{planlist}}" wx:if="{{index%2!==0}}" wx:key="id" bindtouchstart="bindTouchStart" bindtouchend="bindTouchEnd" bindlongtap="bingLongTap" bindtap="toDetail" data-item="{{item}}" data-index="{{index}}">
+		
+				<view class="guide_l_image_view" bindlongpress="longcli" data-item="{{item}}">
+					<image class='jing1' src="http://crm-dev-itrigger.oss-cn-beijing.aliyuncs.com/article_images/5e5ee6bd-1ad8-407c-88e0-569ad9005123.png" alt=""></image>
+					<view class='error'>审核不通过</view>
+					<image class="guide_l_image" src="{{item.img}}" mode="widthFix"></image>
+					<view class="guide_l_image_icon" wx:if="{{item.status == 2 && item.isTrace}}">
+						<view class="guide_l_image_icon_bg"></view>
+						<image src="https://crm-dev-itrigger.oss-cn-beijing.aliyuncs.com/sunac/images/icon-trace-status.png" mode="widthFix"></image>
+					</view>
+				</view>
+				<view class='guide_wrap'>
+					<!-- <view class="guide_i_t flex-row jus-start">
+						<image src="../../images/position.png" class="guide-i-i"></image>
+						{{item.position}}
+					</view> -->
+					<view class="guide-des">
+						{{item.des}}
+					</view>
+					<view class="guide_i_p flex-row">
+						<view class="photoNick" wx:if="{{item.isOfficial == 1}}">
+							<view class="photo photo-gf"></view>
+							<view class="nick">官方推荐</view>
+						</view>
+						<view class="photoNick" wx:if="{{item.isOfficial == 0}}">
+							<view class="photo">
+								<image src="{{item.headPhotoUrl}}"></image>
+							</view>
+							<view class="nick">{{item.nickName}}</view>
+						</view>
+						<view class="collection" catchtap="toCollection" data-item="{{item}}" data-index="{{index}}">
+							<image src="{{item.isCollect=='1'?'http://crm-dev-itrigger.oss-cn-beijing.aliyuncs.com/sunac/V2/play/hart_active2x.png':'http://crm-dev-itrigger.oss-cn-beijing.aliyuncs.com/sunac/V2/play/hart2x.png'}}"></image>
+							<text style="color: {{item.isCollect == 1 ? '#FFBC00' : '#8d8b89'}}">{{item.collectCount>99999?'10w+':(item.collectCount?item.collectCount:'0')}}</text>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+			<view class="bom_loading" wx:if="{{pgc.bomLoading}}">加载中...</view>
+			<view class="bom_loading" wx:if="{{pgc.noMore}}">~~已经到底部啦~~</view>
+	</view>
+</scroll-view>

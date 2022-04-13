@@ -1,0 +1,41 @@
+<!--mp/pages/dragImage/index.wxml-->
+<view class='dragImage' style="overflow: hidden;">
+  <movable-area class='movable-area' 
+                style='display:{{movableViewInfo.showClass}};height:{{movableViewInfo.height}}px;'>
+    <movable-view class='imgitem1'
+                  out-of-bounds='false'
+                  damping='999'
+                  style='height:{{pageInfo.rowHeight}}px;width:{{pageInfo.rowWidth}}px'
+                  direction="all"
+                  x="{{movableViewInfo.x}}"
+                  y="{{movableViewInfo.y}}">
+      <view class='imgitem1' ><image src="{{movableViewInfo.src}}"></image></view>
+    </movable-view>
+  </movable-area>
+  <view class='v1 {{ packUp?"":"v1hidden"}} '>
+      <view      
+      bindlongpress='dragStart' 
+      bindtouchmove='dragMove'
+      bindtouchend='dragEnd'
+      bindtap="tap"
+      wx:key="index"
+      data-index='{{index}}'
+      class='imgitem {{pageInfo.readyPlaceIndex == index ? "ready-place" : ""}}' 
+      wx:for="{{dataUrls}}" >
+      <image
+       style="display: {{ pageInfo.readyPlaceIndex == index?'none':''  }}"
+       src="{{item}}" >
+      </image>
+      <view class='head1' wx:if="{{index==0}}">封面</view>
+      </view> 
+      <view class='imgitem imgitemBorder' bindtap="chooseImage">
+         <image class='jia' src="http://crm-dev-itrigger.oss-cn-beijing.aliyuncs.com/article_images/8323c016-38c9-48df-a3e8-f83f160cbff5.png"></image>
+      </view>
+  </view>
+</view>
+<view class='g1' bindtap="spread">
+    <view class='zhan1'>
+      <text>{{packUptext}}</text> 
+     <image class='{{packUp?"":"jiao1"}}' src="http://crm-dev-itrigger.oss-cn-beijing.aliyuncs.com/article_images/37f022cf-4467-4821-b999-e0b8d4ee88ce.png"></image>
+    </view>
+</view>

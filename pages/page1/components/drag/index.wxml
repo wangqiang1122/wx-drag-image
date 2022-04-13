@@ -1,0 +1,30 @@
+<view class='dragImage' style="overflow: hidden;">
+  <movable-area class='movable-area' 
+                style='display:{{movableViewInfo.showClass}};height:{{movableViewInfo.height}}px;'>
+    <movable-view class='imgitem1'
+                  out-of-bounds='false'
+                  damping='999'
+                  style='height:{{pageInfo.rowHeight}}px;width:{{pageInfo.rowWidth}}px'
+                  direction="all"
+                  x="{{movableViewInfo.x}}"
+                  y="{{movableViewInfo.y}}">
+      <view class='imgitem1' ><image src="{{movableViewInfo.src}}"></image></view>
+    </movable-view>
+  </movable-area>
+  <view class='v1'>
+      <view      
+      bindlongpress='dragStart' 
+      bindtouchmove='dragMove'
+      bindtouchend='dragEnd'
+      bindtap="tap"
+      wx:key="index"
+      data-index='{{index}}'
+      class='imgitem {{pageInfo.readyPlaceIndex == index ? "ready-place" : ""}}' 
+      wx:for="{{dataUrls}}" >
+      <image
+       style="display: {{ pageInfo.readyPlaceIndex == index?'none':''  }}"
+       src="{{item}}" >
+      </image>
+      </view> 
+    </view>
+</view>

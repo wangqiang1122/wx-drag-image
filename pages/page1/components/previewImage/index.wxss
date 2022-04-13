@@ -1,0 +1,53 @@
+/* pages/play/components/previewImage/index.wxss */
+.previewImage{
+  position: fixed;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  z-index: 1111;
+  overflow-y: auto;
+}
+.swiper1{
+  margin-top: 158rpx;
+  width: 100%;
+}
+.swiper1 image {
+  width: 100%;
+  margin: 0 auto;
+}
+.title{
+  color: #fff;
+  text-align: center;
+  font-size: 32rpx;
+  margin-top: 20rpx;
+  position: relative;
+}
+.delteleImage{
+  position: absolute;
+  top: 0;
+  right: 20rpx;
+  display: flex;
+  justify-content: flex-end;
+}
+.delteleImage image {
+  width: 40rpx;
+  height: 40rpx;
+}
+.backImage{
+  position: absolute;
+  top: 0;
+  left: 20rpx;
+  width: 100rpx;
+  display: flex;
+}
+.backImage image{
+  width: 40rpx;
+  height: 40rpx;
+}
+.item1{
+  display: flex;
+  justify-items: center;
+  align-items: center;
+}

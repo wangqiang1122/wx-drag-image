@@ -1,0 +1,258 @@
+/* components/guide/index.wxss */
+
+/* 瀑布流 */
+
+.flex-row {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+}
+.flex-col{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.jus-start {
+    justify-content: flex-start;
+}
+
+.guide_list {
+    margin: 0rpx auto;
+    width: 100%;
+    height: 100%;
+}
+
+.navBar {
+    left: 0;
+    right: 0;
+    height: 80rpx;
+    background: rgb(255, 255, 255);
+}
+
+.guide_item {
+    width: 336rpx;
+    overflow: hidden;
+    /* background-color: white; */
+    margin-top: 20rpx;
+    display: inline-block;
+    box-sizing: border-box;
+    position: relative;
+}
+.guide_l_image_view{
+    display: flex;
+}
+.guide_l_image {
+    width: 336rpx;
+    border-radius: 16rpx;
+    /* height: 354rpx; */
+}
+.guide_l_image_icon{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+}
+.guide_l_image_icon::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+    opacity: 0.6;
+}
+.guide_l_image_icon image{
+    width: 180rpx;
+    height: 180rpx;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -90rpx 0 0 -90rpx;
+}
+
+.guide_r_image {
+    width: 336rpx;
+    /* height: 396rpx; */
+}
+
+.guide_wrap {
+    width: 100%;
+    padding: 14rpx 18rpx 20rpx 18rpx;
+    box-sizing: border-box;
+}
+
+.guide-i-i {
+    width: 18rpx;
+    height: 24rpx;
+    margin-right: 8rpx;
+}
+
+.guide_i_t {
+    font-size: 20rpx;
+    font-family: AppleSystemUIFont;
+    color: rgba(153, 153, 153, 1);
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    line-clamp: 2;
+    text-overflow: ellipsis;
+}
+
+.guide_i_p {
+	margin-top: 16rpx;
+    font-size: 20rpx;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: rgba(153, 153, 153, 1);
+	justify-content: space-between;
+}
+
+.right .guide_i_p{
+	/* margin-top: 54rpx; */
+}
+.guide_i_p image{
+    width: 36rpx;
+    height: 36rpx;
+    margin-right:8rpx;
+    vertical-align: middle;
+}
+.guide-des {
+    font-size: 28rpx;
+    font-family: AppleSystemUIFont;
+    color: rgba(51, 51, 51, 1);
+    /* margin-top: 22rpx; */
+    display: -webkit-box;
+    overflow: hidden;
+    text-align: justify;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    white-space: normal !important;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    line-height: 1.5;
+    font-weight: bold;
+}
+
+.g-container {
+    flex-wrap: wrap;
+    align-items: flex-start;
+    padding: 0rpx 28rpx;
+
+}
+
+.left {
+    width: 336rpx;
+    margin-right: 20rpx;
+    margin-bottom:20rpx;
+}
+
+.right {
+    width: 336rpx;
+    margin-bottom:20rpx;
+}
+.bom_loading {
+	text-align: center;
+	margin: 30rpx auto;
+	font-size: 24rpx;
+	color: #999;
+}
+.noData {
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    margin: 50% auto 0;
+    transform: translateY(-70%);
+}
+
+.noData image {
+    width: 120rpx;
+    height: auto;
+  }
+  
+  .noData text {
+    color: #8F8F90;
+    font-size: 26rpx;
+    margin-top: 20rpx;
+    letter-spacing: 10rpx;
+    margin-left: 10rpx;
+  }
+
+.flex-row .photoNick{
+    flex: 2;
+    display: flex;
+    overflow: hidden;
+    align-items: center;     /* 垂直居中 */
+}
+.flex-row .photoNick .photo{
+    width: 32rpx;
+    height:32rpx;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8rpx;
+    border:1rpx #eee solid;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.flex-row .photoNick .photo image{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto 0;
+    vertical-align: middle;
+}
+
+.collection{
+    flex: 1;
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.collection text{
+    color: #8d8b89;
+    font-size: 24rpx;
+    font-weight: bold;
+}
+.guide_i_p .collection image{
+}
+
+.flex-row .photoNick .photo-gf{
+    background: url('https://crm-dev-itrigger.oss-cn-beijing.aliyuncs.com/sunac/plan/newlogo.jpeg?type=9527') no-repeat center;
+    background-size: 80%;
+}
+
+.flex-row .photoNick .nick{
+    flex: 1;
+    font-size: 24rpx;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.jing1{
+    width: 76rpx;
+    height: 82rpx;
+    position: absolute;
+    left: 8rpx;
+}
+.guo,.error{
+ background-color: #23D5CC;
+ position: absolute;
+ right: 0;
+ font-size: 28rpx;
+ color:#fff; 
+ width: 162rpx;
+ height: 54rpx;
+ line-height: 54rpx; 
+ text-align: center;
+ border-top-right-radius: 16rpx;
+ border-bottom-left-radius: 16rpx;
+}
+.error{
+   background-color: #FF3323;
+}

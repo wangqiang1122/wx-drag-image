@@ -1,0 +1,31 @@
+<!--pages/play/components/previewImage/index.wxml-->
+<view class='previewImage' wx:if='{{isShow}}'>
+  <view class='title'>
+    <view class='backImage' bindtap="backImage">
+      <image src="http://crm-dev-itrigger.oss-cn-beijing.aliyuncs.com/article_images/376787d4-c1bd-4c94-94c7-dfb94698d8bc.png"></image>
+    </view>
+    {{isCurrent? current+1:currentIndex}}/{{len}}
+    <view class='delteleImage' bindtap="delteleImage">
+      <image src="http://crm-dev-itrigger.oss-cn-beijing.aliyuncs.com/article_images/5ef343fa-a61c-4041-8945-237f6a1b99b8.png"></image>
+    </view>
+  </view>
+  <swiper  
+  class='swiper1' 
+  current="{{current}}"
+  autoplay="{{autoplay}}" 
+  interval="{{interval}}" 
+  duration="{{duration}}" 
+  bindchange='change1'
+  circular="{{circular}}"
+  indicator-active-color="{{bg}}"
+   style='height:{{Height}}'>
+   <block wx:for="{{imgUrls}}">
+    <swiper-item class='item1'>
+      <image src="{{item.path}}" 
+      style="width: {{widthImage}};height: {{heightImage}}"
+      class="slide-image" 
+      bindload='imgHeight'/> 
+    </swiper-item>
+   </block>
+</swiper>
+</view>

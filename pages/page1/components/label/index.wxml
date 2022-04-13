@@ -1,0 +1,7 @@
+<!--pages/play/components/label/index.wxml-->
+<view class='biao1' bindtap="labelcli">
+      <view class='ba1'>
+         雪世界
+         <view class='jiantou1'></view>
+      </view>
+   </view>

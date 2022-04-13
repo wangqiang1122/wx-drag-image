@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText":"发布攻略",
+  "usingComponents": {
+    "dragImage": "../components/dragImage1/index",
+    "labelpo": "../components/label/index",
+    "previewImage": "../components/previewImage/index"
+  }
+}

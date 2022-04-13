@@ -1,0 +1,29 @@
+/* pages/play/components/label/index.wxss */
+.ba1{
+  display: inline-block;
+  min-width: 10rpx;
+  height: 48rpx;
+  border:1px solid rgba(193, 203, 255, 1);
+  background-image: url(http://crm-dev-itrigger.oss-cn-beijing.aliyuncs.com/article_images/9fada991-1c9b-4c14-8d76-0e99fc34cf41.png);
+  background-repeat: no-repeat;
+  background-size: 36rpx;
+  background-position: 6rpx center;
+  border-image: linear-gradient(270deg, rgba(193, 203, 255, 1));
+  color: #7D91F0;
+  font-size: 24rpx;
+  line-height: 48rpx;
+  padding-left: 50rpx;
+  padding-right: 40rpx;
+  border-radius: 31rpx;
+  position: relative;
+  padding-top: 3rpx;
+}
+.jiantou1{
+  border: 10rpx solid #7D91F0;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  position: absolute;
+  top:16rpx;
+  right: 8rpx;
+}
